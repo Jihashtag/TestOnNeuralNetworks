@@ -43,7 +43,7 @@ class NeuralNetwork:
         for epoch in range(epochs):
             # flow forward and produce an output
             self.feed_forward()
-            # go back though the network to make corrections based on the output
+            # go back to make corrections based on the output
             self.backpropagation()
             # keep track of the error history over each epoch
             self.error_history.append(np.average(np.abs(self.error)))

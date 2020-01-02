@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import json
-import numpy as np
 import signal
 
 from complexthinking import NeuralNetwork as ComplexNeurones
@@ -55,7 +54,6 @@ def test_or_train():
             f.write(json.dumps(data_json))
         NN.update_data(INPUTS, OUTPUTS)
         show_graph()
-        ERRORS = 0
 
 
 def add_question():
@@ -281,11 +279,11 @@ def data_from_input():
         except EOFError:
             break
         data = []
-        for question in questions:
+        for question in QUESTIONS:
             print(question, " ? ")
             data.append(float(input("Answer (0-10): ")) / 10)
         out = float(input("Note that should be given (0-10): "))
-        names.append(names)
+        names.append(name)
         inputs.append(data)
         outputs.append([out / 10])
     else:
