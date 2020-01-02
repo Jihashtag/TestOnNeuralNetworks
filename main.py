@@ -191,7 +191,15 @@ def handle_ipdb(sig, frame):
 def get_complex():
     complexity = input("Complexity (0-1) : ")
     print('You choose :', complexity)
-    return ComplexNeurones if complexity == '1' else SimpleNeurone
+    if complexity == '1':
+        nweight = int(input("How many weights ? "))
+        weights = []
+        for x in range(nweight - 1):
+            weights.append(int(input("Ouputs of weight {} : ".format(x + 1))))
+        ComplexNeurones.weights_config = weights
+        return ComplexNeurones
+    else:
+        return SimpleNeurone
 
 
 def save_data():

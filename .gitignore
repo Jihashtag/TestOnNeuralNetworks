@@ -2,3 +2,4 @@ __pycache__
 venv
 training.json
 tmp.json
+real_data
